@@ -1,0 +1,25 @@
+﻿<Window x:Class="Camper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Camper"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid Background="#FF492F2F">
+        <Button x:Name="button" Content="Start Camping" Height="24.376" Margin="150.993,0,218.832,42.452" VerticalAlignment="Bottom" ToolTip="Start Camping, this will monitor weather and send alerts when approaching certain need to be done camping techniques to be used."/>
+        <TextBlock x:Name="textBlock" Height="50.84" Margin="150.993,51.714,203.014,0" TextWrapping="Wrap" VerticalAlignment="Top" ToolTip="Camper is camping guide, preparation, and camping tool." FontWeight="Bold" FontSize="16"><Run/><LineBreak/><Run Text="Camper"/></TextBlock>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Margin="11.637,36.549,0,77.453" Width="116.42">
+            <MenuItem Header="View/Add Camper " Height="28.055" Width="116.42" ToolTip="View or Add campers here."/>
+            <MenuItem Header="Camper Log" Height="28.055" Width="116.42" ToolTip=""/>
+            <MenuItem Header="Equipment" Height="28.055" Width="116.42" ToolTip="Organize your equipment here."/>
+            <MenuItem Header="Change Gear" Height="28.055" Width="116.42" ToolTip="Change your gear here."/>
+            <MenuItem Header="Check Gear" Height="28.055" Width="116.42" ToolTip="Check your gear here. You can do such things as gear checklist and or gear replacement."/>
+            <MenuItem Header="Campsites" Height="28.055" Width="116.42" ToolTip="Find campsites."/>
+            <MenuItem Header="GPS" Height="28.055" Width="116.42" ToolTip="Use GPS to better navigate your camping journey."/>
+        </Menu>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Right" Margin="0,45.085,10,10" Stroke="Black" Width="193.014"/>
+        <Label x:Name="label" Content="Current Location" HorizontalAlignment="Right" Height="29.494" Margin="0,3.895,34.863,0" VerticalAlignment="Top" Width="140.736"/>
+
+    </Grid>
+</Window>
