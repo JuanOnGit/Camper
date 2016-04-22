@@ -10,5 +10,6 @@
 
     <Grid>
         
+        <TextBlock Style="{StaticResource EquipmentTextBoxStyle}" />
     </Grid>
 </Page>
