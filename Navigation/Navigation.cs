@@ -8,5 +8,10 @@ namespace Navigation
 {
     public class Navigation
     {
+        public int Id { get; set; }
+
+        public string GPSName { get; set; }
+
+        public string IP { get; set; }
     }
 }
