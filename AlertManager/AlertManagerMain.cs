@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace AlertManager
 {
@@ -16,6 +17,20 @@ namespace AlertManager
     /// </summary>
     public class EquipmentAlert
     {
+        interface IEquipmentAlert
+        {
+            string AlertEquipmentMessage { get; set; }
+            string SendEquipmentAlert(string alertMessage);
+
+            /// <summary>
+            /// Conditions of the alert, such as, "Equipment is old.", "Equipment needs repair", and anything 
+            /// pertaining to the condition of the equipment.
+            /// </summary>
+            /// <param name="alertConditions"></param>
+            /// <returns></returns>
+            string AlertConditions(List<string> alertConditions);
+
+        }
     }
 
     /// <summary>
