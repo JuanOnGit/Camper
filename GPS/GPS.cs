@@ -8,5 +8,12 @@ namespace GPS
 {
     public class GPS
     {
+        public int Latitude { get; set; }
+        public int Longitude { get; set; }
+    }
+
+    public class Coordinate
+    {
+        public void SetGPSLocationBasedOnCoordinates() { }
     }
 }
