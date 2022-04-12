@@ -24,5 +24,11 @@ namespace Camper
         {
             InitializeComponent();
         }
+
+        public static List<> Sort()
+        {
+            var currentList = new List<string>();
+            return List<>
+        }
     }
 }
