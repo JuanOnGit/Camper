@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace EquipmentLibrary
 {
-    public class EquimentLibrary
+    public class EquipmentModel
+    {
+        public List<EquipmentItem> EquipmentList { get; set; }
+
+    }
+
+    public class EquipmentItem
     {
         public int Id { get; set; }
         public string Name { get; set; }

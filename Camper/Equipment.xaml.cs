@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EquipmentLibrary;
 
 namespace Camper
 {
@@ -23,6 +24,11 @@ namespace Camper
         public Equipment()
         {
             InitializeComponent();
+        }
+
+        public List<EquipmentLibrary.EquipmentModel> GetEquipment()
+        {
+            return null;
         }
     }
 }
