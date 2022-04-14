@@ -28,6 +28,24 @@ namespace Camper
 
         public List<EquipmentLibrary.EquipmentModel> GetEquipment()
         {
+            EquipmentLibrary.EquipmentModel equipmentModel = new EquipmentLibrary.EquipmentModel();
+
+            equipmentModel.EquipmentList = new List<EquipmentItem>();
+
+            EquipmentLibrary.EquipmentTypeEnum type = new EquipmentTypeEnum();
+
+            // This is a test item to use, before creating a database to hold items.
+            EquipmentItem item = new EquipmentItem {
+                Id = 1,
+                Name = "TestItem",
+                Weight = 5,
+                Type = "Test"
+            };
+
+            
+            equipmentModel.EquipmentList.Add(item);
+            
+
             return null;
         }
     }
