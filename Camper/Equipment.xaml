@@ -9,7 +9,15 @@
       Title="Equipment">
 
     <Grid>
-        
-        <TextBlock Style="{StaticResource EquipmentTextBoxStyle}" />
+        <ListBox x:Name="listBox" Height="298" Width="321" RenderTransformOrigin="0.5,0.5" d:DataContext="{d:SampleData ItemCount=5}">
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.329"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+        </ListBox>
     </Grid>
 </Page>

@@ -39,12 +39,16 @@ namespace Camper
                 Id = 1,
                 Name = "TestItem",
                 Weight = 5,
-                Type = "Test"
+                Type = "Tool"
             };
 
             
             equipmentModel.EquipmentList.Add(item);
-            
+
+            Binding equipmentBinding = new Binding();
+            listBox.SetBinding(ListBox.ItemsSourceProperty, equipmentBinding);
+
+
 
             return null;
         }

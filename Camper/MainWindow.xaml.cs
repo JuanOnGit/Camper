@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Camper
 {
     /// <summary>
@@ -21,7 +22,7 @@ namespace Camper
     public partial class MainWindow : Window
     {
 
-        
+
 
         public MainWindow()
         {
@@ -30,7 +31,14 @@ namespace Camper
 
         private void ViewAddCamper_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationService.GetNavigationService();
+
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationWindow navigationWindow = new NavigationWindow();
+            navigationWindow.Source = new Uri("Equipment.xaml", UriKind.Relative);
+            navigationWindow.Show();
         }
     }
 }

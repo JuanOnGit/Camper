@@ -12,7 +12,7 @@
         <Menu x:Name="menu" HorizontalAlignment="Left" Margin="11.637,36.549,0,77.453" Width="116.42">
             <MenuItem Header="View/Add Camper" Height="28.055" Width="116.42" ToolTip="View or Add campers here." Click="ViewAddCamper_Click"/>
             <MenuItem Header="Camper Log" Height="28.055" Width="116.42" ToolTip=""/>
-            <MenuItem Header="Equipment" Height="28.055" Width="116.42" ToolTip="Organize your equipment here."/>
+            <MenuItem x:Name="EquipmentBtn" Header="Equipment" Height="28.055" Width="116.42" ToolTip="Organize your equipment here." Click="MenuItem_Click"/>
             <MenuItem Header="Change Gear" Height="28.055" Width="116.42" ToolTip="Change your gear here."/>
             <MenuItem Header="Check Gear" Height="28.055" Width="116.42" ToolTip="Check your gear here. You can do such things as gear checklist and or gear replacement."/>
             <MenuItem Header="Campsites" Height="28.055" Width="116.42" ToolTip="Find campsites."/>
