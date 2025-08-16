@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camper", "Camper\Camper.csproj", "{3B2E50CD-0CED-4661-A8C2-F960E8235BC2}"
 EndProject
@@ -14,6 +14,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamperTests", "CamperTests\CamperTests.csproj", "{ECF7CBD6-FC44-49B2-948A-E4D431052763}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlertManager", "AlertManager\AlertManager.csproj", "{46404A5B-8D40-4847-A9F6-983DA09F9805}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{9ED543E1-B78B-4B1B-9D58-A37EE2DCB2BB}"
+	ProjectSection(SolutionItems) = preProject
+		CamperModel.cs = CamperModel.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -126,5 +131,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B92BEAC1-6377-4349-85C1-5AD343E09AB2}
 	EndGlobalSection
 EndGlobal

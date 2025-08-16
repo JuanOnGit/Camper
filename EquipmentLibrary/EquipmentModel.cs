@@ -18,5 +18,6 @@ namespace EquipmentLibrary
         public string Name { get; set; }
         public string Type { get; set; }
         public double Weight { get; set; }
+
     }
 }

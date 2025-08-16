@@ -27,11 +27,14 @@ namespace Camper
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void ViewAddCamper_Click(object sender, RoutedEventArgs e)
         {
-
+                NavigationWindow navigation = new NavigationWindow();
+                navigation.Source = new Uri("ViewAddCamper.xaml", UriKind.Relative);
+                navigation.Show();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

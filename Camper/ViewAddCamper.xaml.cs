@@ -24,5 +24,16 @@ namespace Camper
         {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            SaveCamper(camperNametextBox.Text);
+        }
+
+        private void SaveCamper(string camperName)
+        {
+            // Code to save camper details goes here
+            MessageBox.Show("Camper" + camperName + " saved successfully!");
+        }
     }
 }
