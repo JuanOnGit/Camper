@@ -20,4 +20,13 @@ namespace EquipmentLibrary
         public double Weight { get; set; }
 
     }
+
+    public enum Type
+    {
+        Other,
+        Tool,
+        Food,
+        Shelter,
+        Safety
+    }
 }
