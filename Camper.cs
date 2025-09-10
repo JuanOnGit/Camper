@@ -1,8 +1,8 @@
 ﻿using System;
 
-public class CamperModel
+public class Camper
 {
-	public CamperModel()
+	public Camper()
 	{
 	}
 

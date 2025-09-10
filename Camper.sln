@@ -15,11 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamperTests", "CamperTests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlertManager", "AlertManager\AlertManager.csproj", "{46404A5B-8D40-4847-A9F6-983DA09F9805}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{9ED543E1-B78B-4B1B-9D58-A37EE2DCB2BB}"
-	ProjectSection(SolutionItems) = preProject
-		CamperModel.cs = CamperModel.cs
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{F347379A-626B-4D60-B1CA-4B2CD4602EFF}"
 EndProject
 Global

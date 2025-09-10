@@ -125,6 +125,7 @@
     <Compile Include="CheckGear.xaml.cs">
       <DependentUpon>CheckGear.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Context\CamperDbContext.cs" />
     <Compile Include="Equipment.xaml.cs">
       <DependentUpon>Equipment.xaml</DependentUpon>
     </Compile>
@@ -132,6 +133,12 @@
     <Compile Include="GPS.xaml.cs">
       <DependentUpon>GPS.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202509101623198_InitialCreate.cs" />
+    <Compile Include="Migrations\202509101623198_InitialCreate.Designer.cs">
+      <DependentUpon>202509101623198_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Camper.cs" />
     <Compile Include="ViewAddCamper.xaml.cs">
       <DependentUpon>ViewAddCamper.xaml</DependentUpon>
     </Compile>
@@ -164,6 +171,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202509101623198_InitialCreate.resx">
+      <DependentUpon>202509101623198_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
