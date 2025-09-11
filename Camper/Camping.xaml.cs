@@ -23,5 +23,10 @@ namespace Camper
         {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Hello World! Basic Inventory");
+        }
     }
 }
