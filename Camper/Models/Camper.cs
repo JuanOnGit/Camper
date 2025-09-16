@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Camper.Models
 { 
@@ -15,5 +16,7 @@ namespace Camper.Models
 		public string EmergencyContact { get; set; }
 
 		public string MedicalConditions { get; set; }
+
+        public virtual ICollection<CamperLog> Logs { get; set; }
     }
 }

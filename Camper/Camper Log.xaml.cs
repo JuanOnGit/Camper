@@ -24,5 +24,10 @@ namespace Camper
         {
             InitializeComponent();
         }
+
+        public void SaveLogs_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Hello World! Camper Log");
+        }
     }
 }

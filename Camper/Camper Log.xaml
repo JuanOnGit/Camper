@@ -9,6 +9,21 @@
       Title="Camper_Log">
 
     <Grid>
-        
+        <DockPanel LastChildFill="False">
+            <DataGrid x:Name="dataGrid" Width="355" d:ItemsSource="{Binding CamperLogs}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="*"/>
+                    <DataGridTextColumn Header="Time" Binding="{Binding Time}" Width="*"/>
+                    <DataGridTextColumn Header="Incident" Binding="{Binding Incident}" Width="2*"/>
+                </DataGrid.Columns>
+                <Button Content="Save Logs"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="10"
+                Width="100"
+                Click="SaveLogs_Click"/>
+            </DataGrid>
+        </DockPanel>
+
     </Grid>
 </Page>
