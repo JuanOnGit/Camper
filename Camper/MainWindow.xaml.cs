@@ -43,5 +43,12 @@ namespace Camper
             navigationWindow.Source = new Uri("Equipment.xaml", UriKind.Relative);
             navigationWindow.Show();
         }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationWindow navigationWindow = new NavigationWindow();
+            navigationWindow.Source = new Uri("Camper Log.xaml", UriKind.Relative);
+            navigationWindow.Show();
+        }
     }
 }

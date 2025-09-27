@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Camper.Context;
+using Camper.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,19 +17,46 @@ using System.Windows.Shapes;
 
 namespace Camper
 {
-    /// <summary>
-    /// Interaction logic for Camper_Log.xaml
-    /// </summary>
+    // ...
+
     public partial class Camper_Log : Page
     {
+        private CamperDbContext dbContext = new CamperDbContext();
+        private List<CamperLog> camperLogs; 
         public Camper_Log()
         {
             InitializeComponent();
+            camperLogs = dbContext.CamperLogs.ToList(); // This now matches the type
         }
 
-        public void SaveLogs_Click(object sender, RoutedEventArgs e)
+        // Replace all instances of 'LogsDataGrid' with 'dataGrid' to match the defined field
+
+        private void SaveLogs_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Hello World! Camper Log");
+            foreach (var row in dataGrid.Items)
+            {
+                if (row is CamperLog log)
+                {
+                    // Check if the log already exists in the database
+                    var existingLog = dbContext.CamperLogs.FirstOrDefault(l => l.Id == log.Id);
+                    if (existingLog != null)
+                    {
+                        // Update existing log
+                        existingLog.LogDate = log.LogDate;
+                        existingLog.Incident = log.Incident;
+                        existingLog.CamperId = log.CamperId;
+                    }
+                    else
+                    {
+                        // Add new log
+                        dbContext.CamperLogs.Add(log);
+                    }
+                }
+            }
+
+            dbContext.SaveChanges();
         }
+
+        // ... rest of the class unchanged
     }
 }
