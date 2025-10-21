@@ -15,7 +15,7 @@
             <MenuItem x:Name="EquipmentBtn" Header="Equipment" Height="28.055" Width="116.42" ToolTip="Organize your equipment here." Click="MenuItem_Click"/>
             <MenuItem Header="Change Gear" Height="28.055" Width="116.42" ToolTip="Change your gear here."/>
             <MenuItem Header="Check Gear" Height="28.055" Width="116.42" ToolTip="Check your gear here. You can do such things as gear checklist and or gear replacement."/>
-            <MenuItem Header="Campsites" Height="28.055" Width="116.42" ToolTip="Find campsites."/>
+            <MenuItem Header="Campsites" Height="28.055" Width="116.42" ToolTip="Find campsites." Click="MenuItem_Click_2"/>
             <MenuItem Header="GPS" Height="28.055" Width="116.42" ToolTip="Use GPS to better navigate your camping journey."/>
         </Menu>
         <StackPanel Width="193.014" Margin="314,4,10,-4">

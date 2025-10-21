@@ -8,24 +8,23 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="Camper_Log">
 
-    <Grid>
-        <DockPanel LastChildFill="False">
-            <DataGrid x:Name="dataGrid" Width="355" d:ItemsSource="{Binding CamperLogs}" Height="343">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="*"/>
-                    <DataGridTextColumn Header="Time" Binding="{Binding Time}" Width="*"/>
-                    <DataGridTextColumn Header="Incident" Binding="{Binding Incident}" Width="2*"/>
-                </DataGrid.Columns>
-                
-            </DataGrid>
-            <Button Content="Save Logs"
+    <DockPanel LastChildFill="True">
+        <Button Content="Save Logs"
+            DockPanel.Dock="Bottom"
             HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
             Margin="10"
             Width="100"
             Background="ForestGreen"
             Click="SaveLogs_Click"/>
-        </DockPanel>
-
-    </Grid>
+        <DataGrid x:Name="dataGrid"
+              AutoGenerateColumns="False"
+              CanUserAddRows="True"
+              AddingNewItem="camperLog_AddingNewItem">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding LogDate, StringFormat=d, Mode=TwoWay}" Width="*"/>
+                <DataGridTextColumn Header="Time" Binding="{Binding LogDate, StringFormat=t, Mode=TwoWay}" Width="*"/>
+                <DataGridTextColumn Header="Incident" Binding="{Binding Incident, Mode=TwoWay}" Width="2*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
 </Page>

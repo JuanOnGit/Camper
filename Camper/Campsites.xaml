@@ -9,6 +9,21 @@
       Title="Campsites">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Campsites" FontSize="16" Margin="8"/>
+
+        <ListView Grid.Row="1" Name="CampsitesList" Margin="8" ItemsSource="{Binding Campsites}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="200"/>
+                    <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Location}" Width="200"/>
+                    <GridViewColumn Header="Capacity" DisplayMemberBinding="{Binding Capacity}" Width="80"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Page>

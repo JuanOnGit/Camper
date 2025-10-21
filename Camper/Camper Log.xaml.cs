@@ -2,6 +2,7 @@
 using Camper.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,11 +23,12 @@ namespace Camper
     public partial class Camper_Log : Page
     {
         private CamperDbContext dbContext = new CamperDbContext();
-        private List<CamperLog> camperLogs; 
+        private ObservableCollection<CamperLog> camperLogs;
         public Camper_Log()
         {
             InitializeComponent();
-            camperLogs = dbContext.CamperLogs.ToList(); // This now matches the type
+            camperLogs = new ObservableCollection<CamperLog>(dbContext.CamperLogs.ToList());
+            dataGrid.ItemsSource = camperLogs;
         }
 
         // Replace all instances of 'LogsDataGrid' with 'dataGrid' to match the defined field
@@ -57,6 +59,13 @@ namespace Camper
             dbContext.SaveChanges();
         }
 
-        // ... rest of the class unchanged
+        private void camperLog_AddingNewItem(object sender, AddingNewItemEventArgs e)
+        {
+            e.NewItem = new CamperLog
+            {
+                LogDate = DateTime.Now
+                // Optionally set other defaults
+            };
+        }
     }
 }
