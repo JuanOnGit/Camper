@@ -24,5 +24,14 @@ namespace Camper
         {
             InitializeComponent();
         }
+
+        public class Campsite
+        {
+            public string Name { get; set; }
+            public string Location { get; set; }
+            public int Capacity { get; set; }
+        }
+
+        //TODO: Create an API that loads the campsites from a database or external source
     }
 }
