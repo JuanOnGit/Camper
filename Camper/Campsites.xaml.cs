@@ -1,37 +1,57 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Net.Http;
+using System.Runtime.Serialization;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Xml;
+using APIService;
 
 namespace Camper
 {
-    /// <summary>
-    /// Interaction logic for Campsites.xaml
-    /// </summary>
     public partial class Campsites : Page
     {
-        public Campsites()
+        private static readonly HttpClient Client = new HttpClient();
+        private readonly ICampsiteService service;
+
+        public Campsites() : this(null)
+        {
+        }
+
+        public Campsites(ICampsiteService service)
         {
             InitializeComponent();
+            this.service = service;
         }
 
-        public class Campsite
+        private async void Campsites_Loaded(object sender, RoutedEventArgs e)
         {
-            public string Name { get; set; }
-            public string Location { get; set; }
-            public int Capacity { get; set; }
+            StatusText.Text = "Loading campsites...";
+            try
+            {
+                var campsiteService = service ?? CreateService();
+                var campsites = await campsiteService.GetCampsitesAsync(CancellationToken.None);
+                CampsitesList.ItemsSource = campsites;
+                StatusText.Text = campsites.Count == 0 ? "No campsites found." : string.Empty;
+            }
+            catch (Exception ex) when (ex is HttpRequestException || ex is TaskCanceledException ||
+                                       ex is SerializationException || ex is XmlException ||
+                                       ex is InvalidOperationException)
+            {
+                CampsitesList.ItemsSource = null;
+                StatusText.Text = "Unable to load campsites: " + ex.Message;
+            }
         }
 
-        //TODO: Create an API that loads the campsites from a database or external source
+        private static ICampsiteService CreateService()
+        {
+            var apiKey = Environment.GetEnvironmentVariable("RIDB_API_KEY");
+            if (string.IsNullOrWhiteSpace(apiKey))
+                throw new InvalidOperationException(
+                    "Set RIDB_API_KEY before starting the application.");
+
+            return new CampsiteService(Client, apiKey);
+        }
     }
 }

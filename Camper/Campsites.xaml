@@ -6,22 +6,26 @@
       xmlns:local="clr-namespace:Camper"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="Campsites">
+      Title="Campsites" Loaded="Campsites_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Campsites" FontSize="16" Margin="8"/>
+        <TextBlock Grid.Row="1" Name="StatusText" Margin="8" TextWrapping="Wrap"/>
 
-        <ListView Grid.Row="1" Name="CampsitesList" Margin="8" ItemsSource="{Binding Campsites}">
+        <ListView Grid.Row="2" Name="CampsitesList" Margin="8">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="200"/>
-                    <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Location}" Width="200"/>
-                    <GridViewColumn Header="Capacity" DisplayMemberBinding="{Binding Capacity}" Width="80"/>
+                    <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="120"/>
+                    <GridViewColumn Header="Latitude" DisplayMemberBinding="{Binding Latitude}" Width="100"/>
+                    <GridViewColumn Header="Longitude" DisplayMemberBinding="{Binding Longitude}" Width="100"/>
+                    <GridViewColumn Header="Accessible" DisplayMemberBinding="{Binding Accessible}" Width="80"/>
                 </GridView>
             </ListView.View>
         </ListView>

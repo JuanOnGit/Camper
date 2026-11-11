@@ -61,7 +61,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" /><Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -195,7 +195,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EquipmentLibrary\EquipmentLibrary.csproj">
+    <ProjectReference Include="..\APIService\APIService.csproj"><Project>{3D78189B-6F5A-4D3C-A4D9-0C64F0CD5ED2}</Project><Name>APIService</Name></ProjectReference><ProjectReference Include="..\EquipmentLibrary\EquipmentLibrary.csproj">
       <Project>{bf1931b9-4937-47ae-9334-c472e06fd61e}</Project>
       <Name>EquipmentLibrary</Name>
     </ProjectReference>
